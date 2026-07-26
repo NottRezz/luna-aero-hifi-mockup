@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Luna Music</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css?v=3" />
+</head>
+<body>
+  <div class="bokeh" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+
+  <!-- ================= Site nav (left rail) ================= -->
+  <aside class="shell">
+    <div class="shell__brand">
+      <span class="shell__orb" aria-hidden="true">&#9834;</span>
+      <span class="shell__text">
+        <b>Luna Music</b>
+        <small>XP-inspired</small>
+      </span>
+    </div>
+
+    <nav class="shell__tabs" role="tablist" aria-label="Site sections">
+      <button type="button" class="shell__tab" role="tab" id="shelltab-gallery"
+              aria-controls="panel-gallery" aria-selected="true" data-mode="gallery">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h8v8H3zm10 0h8v8h-8zM3 13h8v8H3zm10 0h8v8h-8z"/></svg>
+        <span>Mock-ups</span>
+      </button>
+      <button type="button" class="shell__tab" role="tab" id="shelltab-prototype"
+              aria-controls="panel-prototype" aria-selected="false" data-mode="prototype" tabindex="-1">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 1h10a2 2 0 0 1 2 2v18a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2zm0 4v14h10V5zm3-2.4h4v.8h-4z"/></svg>
+        <span>Prototype</span>
+      </button>
+    </nav>
+
+    <div class="shell__foot">
+      <b>Frutiger Aero</b>
+      Interface study
+    </div>
+  </aside>
+
+  <main class="stage">
+
+  <!-- ================= Mock-up gallery ================= -->
+  <section id="panel-gallery" role="tabpanel" aria-labelledby="shelltab-gallery">
+    <div class="gallery-intro">
+      <h2>Mock-ups</h2>
+      <p>Five key screens, cloned from the live prototype at runtime — never redrawn by hand, so they can't drift from the real thing.</p>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+    <p class="gallery-note">Static previews. Use <b>Open in prototype</b> on any screen to interact with it.</p>
+  </section>
+
+  <!-- ================= Interactive prototype ================= -->
+  <section id="panel-prototype" role="tabpanel" aria-labelledby="shelltab-prototype">
+  <div class="device">
+    <div class="app" id="app">
+
+      <!-- ================= App bar ================= -->
+      <header class="appbar">
+        <div class="fizz" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+        <div class="brand">
+          <div class="brand__orb" aria-hidden="true">♪</div>
+          <div class="brand__text">
+            <b>Luna Music</b>
+            <span>ONLINE</span>
+          </div>
+        </div>
+
+        <div class="appbar__actions">
+          <button type="button" class="icon-btn" aria-label="Notifications">
+            <svg viewBox="0 0 24 24"><path d="M12 22a2.2 2.2 0 0 0 2.2-2.2H9.8A2.2 2.2 0 0 0 12 22zm7-6v-5.5c0-3.2-1.8-5.9-4.8-6.6v-.7a2.2 2.2 0 0 0-4.4 0v.7C6.8 4.6 5 7.3 5 10.5V16l-2 2v1h18v-1l-2-2z"/></svg>
+          </button>
+          <button type="button" class="icon-btn" id="acctBtn" aria-label="Account and settings">
+            <svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-3.9 0-9 1.9-9 4.5V21h18v-2.5c0-2.6-5.1-4.5-9-4.5z"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- ================= Tabs ================= -->
+      <nav class="tabs" role="tablist" aria-label="Sections">
+        <button type="button" class="tab" role="tab" id="tab-search" aria-controls="view-search" aria-selected="true" data-view="search">Search</button>
+        <button type="button" class="tab" role="tab" id="tab-playlist" aria-controls="view-playlist" aria-selected="false" data-view="playlist" tabindex="-1">Playlist</button>
+        <button type="button" class="tab" role="tab" id="tab-library" aria-controls="view-library" aria-selected="false" data-view="library" tabindex="-1">Library</button>
+        <button type="button" class="tab" role="tab" id="tab-profile" aria-controls="view-profile" aria-selected="false" data-view="profile" tabindex="-1">Profile</button>
+      </nav>
+
+      <!-- ================= Views ================= -->
+      <main class="views" id="views">
+
+        <!-- ---------- SEARCH ---------- -->
+        <section class="view is-active" id="view-search" role="tabpanel" aria-labelledby="tab-search" data-view="search">
+          <div class="search-row">
+            <label class="field">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7e9fc4" stroke-width="2.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+              <input type="search" placeholder="Songs, artists, vibes…" aria-label="Search music" />
+            </label>
+            <button type="button" class="ai-btn" title="Ask Luna AI">AI</button>
+          </div>
+
+          <div class="section-label">Recent <span>Clear</span></div>
+          <div class="chips" id="recentChips">
+            <button type="button" class="chip" aria-pressed="false">lo-fi crystal</button>
+            <button type="button" class="chip" aria-pressed="false">aero jazz</button>
+            <button type="button" class="chip" aria-pressed="false">liquid dnb</button>
+            <button type="button" class="chip" aria-pressed="false">neo-plastic pop</button>
+            <button type="button" class="chip" aria-pressed="false">chillstep</button>
+          </div>
+
+          <div class="section-label">Made for you <span>See all</span></div>
+          <div class="carousel">
+            <button type="button" class="pl-card">
+              <div class="art art--a"><b>24 TRACKS</b></div>
+              <div class="name">Midnight Echoes</div>
+              <div class="sub">1h 42m · Updated today</div>
+            </button>
+            <button type="button" class="pl-card">
+              <div class="art art--d"><b>18 TRACKS</b></div>
+              <div class="name">Sunset Protocol</div>
+              <div class="sub">1h 09m · Weekly mix</div>
+            </button>
+            <button type="button" class="pl-card">
+              <div class="art art--c"><b>31 TRACKS</b></div>
+              <div class="name">Glass Garden</div>
+              <div class="sub">2h 04m · Ambient</div>
+            </button>
+            <button type="button" class="pl-card">
+              <div class="art art--b"><b>12 TRACKS</b></div>
+              <div class="name">Neon Acrylic</div>
+              <div class="sub">47m · Synthwave</div>
+            </button>
+          </div>
+
+          <div class="section-label">Moods</div>
+          <div class="mood-grid">
+            <button type="button" class="mood m1">
+              <span class="glyph">🌊</span>
+              <b>Focus<span>Deep &amp; clean</span></b>
+            </button>
+            <button type="button" class="mood m2">
+              <span class="glyph">🌙</span>
+              <b>Late Night<span>Low &amp; slow</span></b>
+            </button>
+            <button type="button" class="mood m3">
+              <span class="glyph">☀️</span>
+              <b>Sunrise<span>Warm starts</span></b>
+            </button>
+            <button type="button" class="mood m4">
+              <span class="glyph">🍃</span>
+              <b>Unwind<span>Soft landings</span></b>
+            </button>
+          </div>
+
+          <div class="ticker">
+            <span class="dot" aria-hidden="true"></span>
+            <div>
+              <p>Luna Radio · Aero Channel</p>
+              <small id="listeners">2,418 listening now</small>
+            </div>
+            <button type="button" class="btn btn-green" style="margin-left:auto">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Tune in
+            </button>
+          </div>
+
+          <div class="section-label">Jump back in <span>History</span></div>
+          <div class="queue">
+            <button type="button" class="q-item">
+              <span class="art art--e"></span>
+              <span class="m"><b>Wallpaper Bliss</b><span>Vista Kids · 2 days ago</span></span>
+              <span class="d">4:01</span>
+            </button>
+            <button type="button" class="q-item">
+              <span class="art art--f"></span>
+              <span class="m"><b>Bubble Physics</b><span>Chrome Coast · 4 days ago</span></span>
+              <span class="d">3:07</span>
+            </button>
+            <button type="button" class="q-item">
+              <span class="art art--c"></span>
+              <span class="m"><b>Etheric Echo</b><span>Aero Fields · last week</span></span>
+              <span class="d">5:02</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- ---------- PLAYLIST ---------- -->
+        <section class="view" id="view-playlist" role="tabpanel" aria-labelledby="tab-playlist" data-view="playlist" hidden>
+          <div class="pl-hero">
+            <div class="art art--a"></div>
+            <div class="meta">
+              <div class="kicker">Playlist</div>
+              <h2>Midnight Echoes</h2>
+              <div class="sub">Luna Collective · 24 tracks</div>
+            </div>
+          </div>
+
+          <div class="pl-actions">
+            <button type="button" class="btn btn-blue gloss" id="playAll">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Play all
+            </button>
+            <button type="button" class="icon-sq" id="plShuffle" aria-pressed="false" aria-label="Shuffle">
+              <svg viewBox="0 0 24 24"><path d="M10.6 9.2 5.4 4 4 5.4l5.2 5.2 1.4-1.4zM14.5 4l2 2L4 18.6 5.4 20 18 7.5l2 2V4h-5.5zm.3 9.4-1.4 1.4 3.1 3.1L14.5 20H20v-5.5l-2 2-3.2-3.1z"/></svg>
+            </button>
+            <button type="button" class="icon-sq" id="plLike" aria-pressed="true" aria-label="Save playlist">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.7-9.6-9A5.4 5.4 0 0 1 12 6.3a5.4 5.4 0 0 1 9.6 5.7C19.5 16.3 12 21 12 21z"/></svg>
+            </button>
+            <button type="button" class="icon-sq" aria-label="More options">
+              <svg viewBox="0 0 24 24"><path d="M12 8a2 2 0 1 0-2-2 2 2 0 0 0 2 2zm0 2a2 2 0 1 0 2 2 2 2 0 0 0-2-2zm0 6a2 2 0 1 0 2 2 2 2 0 0 0-2-2z"/></svg>
+            </button>
+          </div>
+
+          <div class="stat-strip">
+            <div class="stat blue"><div class="k">TRACKS</div><div class="v">24</div></div>
+            <div class="stat orange"><div class="k">PLAYTIME</div><div class="v">1h 42m</div></div>
+            <div class="stat green"><div class="k">SAVED</div><div class="v">312</div></div>
+          </div>
+
+          <div class="section-label">Tracks <span>Sort: Custom</span></div>
+          <div class="tracks" id="trackList"></div>
+        </section>
+
+        <!-- ---------- LIBRARY ---------- -->
+        <section class="view" id="view-library" role="tabpanel" aria-labelledby="tab-library" data-view="library" hidden>
+          <div class="search-row">
+            <label class="field">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7e9fc4" stroke-width="2.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+              <input type="search" id="libFilter" placeholder="Filter your library…" aria-label="Filter library" />
+            </label>
+          </div>
+
+          <div class="segmented" role="tablist" aria-label="Library filter">
+            <button type="button" role="tab" aria-selected="true">Songs</button>
+            <button type="button" role="tab" aria-selected="false">Albums</button>
+            <button type="button" role="tab" aria-selected="false">Artists</button>
+          </div>
+
+          <div class="sort-row">
+            <span class="lbl">Recently added</span>
+            <div class="view-toggle">
+              <button type="button" aria-pressed="true" aria-label="List view">
+                <svg viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>
+              </button>
+              <button type="button" aria-pressed="false" aria-label="Grid view">
+                <svg viewBox="0 0 24 24"><path d="M4 4h7v7H4zm9 0h7v7h-7zM4 13h7v7H4zm9 0h7v7h-7z"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="tracks" id="libList"></div>
+
+          <div class="section-label">Browse genres</div>
+          <div class="genre-grid">
+            <button type="button" class="genre">
+              <div class="art art--b">
+                <b>Synthwave</b><span>142 TRACKS</span>
+                <span class="wave" aria-hidden="true"></span>
+              </div>
+            </button>
+            <button type="button" class="genre">
+              <div class="art art--e">
+                <b>Ambient</b><span>96 TRACKS</span>
+                <span class="wave" aria-hidden="true"></span>
+              </div>
+            </button>
+            <button type="button" class="genre">
+              <div class="art art--c">
+                <b>Lo-Fi</b><span>210 TRACKS</span>
+                <span class="wave" aria-hidden="true"></span>
+              </div>
+            </button>
+            <button type="button" class="genre">
+              <div class="art art--d">
+                <b>Trance</b><span>78 TRACKS</span>
+                <span class="wave" aria-hidden="true"></span>
+              </div>
+            </button>
+          </div>
+        </section>
+
+        <!-- ---------- PROFILE ---------- -->
+        <section class="view" id="view-profile" role="tabpanel" aria-labelledby="tab-profile" data-view="profile" hidden>
+          <div class="profile-card">
+            <div class="profile-card__avatar art art--e"><span>RE</span></div>
+            <div class="profile-card__meta">
+              <b>Ryker E.</b>
+              <span class="at">&#64;rykerlistens</span>
+              <span class="plan">PREMIUM</span>
+            </div>
+          </div>
+
+          <div class="profile-stats">
+            <div><b>1,284</b><span>Songs</span></div>
+            <div><b>37</b><span>Playlists</span></div>
+            <div><b>92h</b><span>This year</span></div>
+          </div>
+
+          <div class="section-label">Account</div>
+          <div class="form">
+            <div class="form-row">
+              <label for="pfUser">Username</label>
+              <div class="field">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#7e9fc4"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-3.9 0-9 1.9-9 4.5V21h18v-2.5c0-2.6-5.1-4.5-9-4.5z"/></svg>
+                <input id="pfUser" type="text" value="rykerlistens" autocomplete="username" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label for="pfMail">Email</label>
+              <div class="field">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#7e9fc4"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>
+                <input id="pfMail" type="email" value="ryker@lunamusic.app" autocomplete="email" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label for="pfPass">Password</label>
+              <div class="field">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#7e9fc4"><path d="M17 9V7a5 5 0 0 0-10 0v2H5v12h14V9zm-8-2a3 3 0 0 1 6 0v2H9zm3 6a2 2 0 0 1 1 3.7V19h-2v-2.3A2 2 0 0 1 12 13z"/></svg>
+                <input id="pfPass" type="password" value="aerobliss01" autocomplete="current-password" />
+                <button type="button" class="reveal" id="pfReveal" aria-pressed="false" aria-label="Show password">
+                  <svg viewBox="0 0 24 24"><path d="M12 5c-5 0-9.3 3.1-11 7 1.7 3.9 6 7 11 7s9.3-3.1 11-7c-1.7-3.9-6-7-11-7zm0 11.5A4.5 4.5 0 1 1 16.5 12 4.5 4.5 0 0 1 12 16.5zm0-7A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5z"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-label">Playback</div>
+          <div class="segmented" role="tablist" aria-label="Audio quality">
+            <button type="button" role="tab" aria-selected="false">Normal</button>
+            <button type="button" role="tab" aria-selected="false">High</button>
+            <button type="button" role="tab" aria-selected="true">Lossless</button>
+          </div>
+
+          <div class="switches">
+            <label class="switch">
+              <span class="switch__text">
+                <b>Offline downloads</b>
+                <span>Keep saved music on device</span>
+              </span>
+              <input type="checkbox" checked />
+              <span class="switch__track"><span class="switch__thumb"></span></span>
+            </label>
+
+            <label class="switch">
+              <span class="switch__text">
+                <b>Crossfade</b>
+                <span>Blend tracks by 6 seconds</span>
+              </span>
+              <input type="checkbox" />
+              <span class="switch__track"><span class="switch__thumb"></span></span>
+            </label>
+
+            <label class="switch">
+              <span class="switch__text">
+                <b>Explicit content</b>
+                <span>Allow in recommendations</span>
+              </span>
+              <input type="checkbox" checked />
+              <span class="switch__track"><span class="switch__thumb"></span></span>
+            </label>
+          </div>
+
+          <div class="profile-actions">
+            <button type="button" class="btn btn-blue">Save changes</button>
+            <button type="button" class="btn btn-quiet">Sign out</button>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- ================= Dock (mini player) ================= -->
+      <footer class="dock" id="dock" role="button" tabindex="0" aria-label="Open now playing">
+        <div class="dock__rail"><div class="dock__fill" id="dockFill"></div></div>
+        <span class="dock__chev" aria-hidden="true"></span>
+
+        <div class="art art--a" id="dockArt"></div>
+
+        <div class="dock__meta">
+          <b><span class="t" id="dockTitle">Digital Rain</span><span class="eq" id="dockEq" aria-hidden="true"><i></i><i></i><i></i><i></i></span></b>
+          <span id="dockArtist">SynthWave Pro</span>
+        </div>
+
+        <div class="dock__controls">
+          <button type="button" class="round sm" data-act="prev" aria-label="Previous track">
+            <svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6L18 18V6z"/></svg>
+          </button>
+          <button type="button" class="round play" data-act="toggle" aria-label="Pause">
+            <svg viewBox="0 0 24 24" class="js-pp"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+          </button>
+          <button type="button" class="round sm" data-act="next" aria-label="Next track">
+            <svg viewBox="0 0 24 24"><path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg>
+          </button>
+        </div>
+      </footer>
+
+      <!-- ================= Scrim + Now Playing sheet ================= -->
+      <div class="scrim" id="scrim"></div>
+
+      <section class="sheet" id="sheet" aria-label="Now playing" aria-hidden="true">
+        <div class="sheet__bar" id="sheetBar">
+          <button type="button" class="icon-btn" id="sheetClose" aria-label="Close now playing">
+            <svg viewBox="0 0 24 24"><path d="M7.4 8.6 12 13.2l4.6-4.6L18 10l-6 6-6-6z"/></svg>
+          </button>
+          <div class="sheet__ctx">
+            <small id="sheetSrcKind">Playing from playlist</small>
+            <b id="sheetSrcName">Midnight Echoes</b>
+          </div>
+          <button type="button" class="icon-btn" aria-label="Track options">
+            <svg viewBox="0 0 24 24"><path d="M12 8a2 2 0 1 0-2-2 2 2 0 0 0 2 2zm0 2a2 2 0 1 0 2 2 2 2 0 0 0-2-2zm0 6a2 2 0 1 0 2 2 2 2 0 0 0-2-2z"/></svg>
+          </button>
+        </div>
+
+        <div class="sheet__body">
+          <div class="cover">
+            <div class="cover__inner art art--a" id="npArt">
+              <span class="cover__ring" aria-hidden="true"></span>
+              <span class="cover__label" id="npLabel">NEON ECHO</span>
+            </div>
+          </div>
+
+          <div class="viz" id="viz" aria-hidden="true"></div>
+
+          <div class="np-head">
+            <div class="txt">
+              <h2 id="npTitle">Digital Rain</h2>
+              <p id="npArtist">SynthWave Pro</p>
+            </div>
+            <button type="button" class="icon-sq" id="npLike" aria-pressed="false" aria-label="Like this track">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.7-9.6-9A5.4 5.4 0 0 1 12 6.3a5.4 5.4 0 0 1 9.6 5.7C19.5 16.3 12 21 12 21z"/></svg>
+            </button>
+          </div>
+
+          <div class="quality">
+            <span class="hot">LOSSLESS</span>
+            <span>320 KBPS</span>
+            <span>STEREO</span>
+            <span>48 KHZ</span>
+          </div>
+
+          <div class="seek">
+            <div class="seek__bar" id="seekBar" role="slider" tabindex="0"
+                 aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="40" aria-valuetext="1:42 of 4:15">
+              <div class="seek__fill" id="seekFill"></div>
+              <div class="seek__handle" id="seekHandle"></div>
+            </div>
+            <div class="seek__times">
+              <span id="npElapsed">1:42</span>
+              <span id="npRemain">-2:33</span>
+            </div>
+          </div>
+
+          <div class="transport">
+            <button type="button" class="t-side" id="npShuffle" aria-pressed="false" aria-label="Shuffle">
+              <svg viewBox="0 0 24 24"><path d="M10.6 9.2 5.4 4 4 5.4l5.2 5.2 1.4-1.4zM14.5 4l2 2L4 18.6 5.4 20 18 7.5l2 2V4h-5.5zm.3 9.4-1.4 1.4 3.1 3.1L14.5 20H20v-5.5l-2 2-3.2-3.1z"/></svg>
+            </button>
+            <button type="button" class="t-skip" data-act="prev" aria-label="Previous track">
+              <svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6L18 18V6z"/></svg>
+            </button>
+            <button type="button" class="t-play" data-act="toggle" aria-label="Pause">
+              <svg viewBox="0 0 24 24" class="js-pp"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+            </button>
+            <button type="button" class="t-skip" data-act="next" aria-label="Next track">
+              <svg viewBox="0 0 24 24"><path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg>
+            </button>
+            <button type="button" class="t-side" id="npRepeat" aria-pressed="false" aria-label="Repeat">
+              <svg viewBox="0 0 24 24"><path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"/></svg>
+            </button>
+          </div>
+
+          <div class="np-extras">
+            <button type="button" class="np-pill">
+              <svg viewBox="0 0 24 24"><path d="M4 5h16v2H4zm0 4h11v2H4zm0 4h16v2H4zm0 4h11v2H4z"/></svg>Lyrics
+            </button>
+            <button type="button" class="np-pill">
+              <svg viewBox="0 0 24 24"><path d="M12 3v10.6A4 4 0 1 0 14 17V7h4V3z"/></svg>Similar
+            </button>
+            <button type="button" class="np-pill">
+              <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 10.6 4.2 2.5-.9 1.5-5.3-3.2V6h2z"/></svg>Timer
+            </button>
+          </div>
+
+          <div class="upnext">
+            <div class="section-label">Up next <span>Queue</span></div>
+            <div class="queue" id="queue"></div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+  </section>
+
+  </main>
+
+  <script src="js/app.js?v=3"></script>
+  <script src="js/site.js?v=3"></script>
+</body>
+</html>
