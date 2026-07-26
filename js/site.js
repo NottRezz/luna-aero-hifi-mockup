@@ -36,7 +36,7 @@
       screen: "profile",
       n: "05",
       name: "Profile",
-      desc: "Account fields and playback preferences. Reuses the search field, section labels and segmented control rather than inventing new ones."
+      desc: "Account fields and playback preferences, built from the components the other screens already use."
     }
   ];
 
@@ -46,7 +46,7 @@
   var PHONE_W = 372;   // the width the phone UI is authored at
   var PHONE_H = 780;
   var MIN_SCALE = 0.34;
-  var MAX_SCALE = 0.92; // never blow the mock-ups up past near-life-size
+  var MAX_SCALE = 1;    // life-size, never upscaled past it
 
   var body = document.body;
   var grid = document.getElementById("galleryGrid");

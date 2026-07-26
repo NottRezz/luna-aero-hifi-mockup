@@ -271,11 +271,14 @@ body[data-mode="prototype"] #panel-prototype {
    stepping at breakpoints. */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(248px, 1fr));
-  align-items: start;
+  /* a wide minimum keeps the column count low so each phone renders large */
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  /* 1fr auto-rows equalises every row to the tallest card, so a longer
+     caption can't make one mock-up taller than the rest */
+  grid-auto-rows: 1fr;
   gap: 24px;
-  max-width: 1500px;
-  padding: 26px 32px 10px;
+  max-width: 1560px;
+  padding: 22px 32px 10px;
 }
 
 .gallery-note {
@@ -289,8 +292,9 @@ body[data-mode="prototype"] #panel-prototype {
 
 .mock {
   min-width: 0;
-  /* stop a lone column from stretching a card far past the phone inside it */
-  max-width: 420px;
+  /* 372px phone + 28px card padding — at scale 1 the stage is exactly the
+     phone's width, so a wide column never strands it in dead space */
+  max-width: 400px;
   justify-self: center;
   width: 100%;
   padding: 14px 14px 16px;
